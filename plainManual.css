@@ -18,7 +18,7 @@ html, body{
         }
 .box {
     border: 2px solid red;
-    margin: 0.5%;
+    margin: o.5%;
     
     
 }
@@ -29,8 +29,8 @@ html, body{
 .col-3  { width: 23.5%; }
 .col-4  { width: 32%; }
 .col-5  { width: 41.66%; }
-.col-6  { width: 48.0%; }
-.col-7  { width: 48.0%; }
+.col-6  { width: 49.0%; }
+.col-7  { width: 58.33%; }
 .col-8  { width: 65%; }
 .col-9  { width: 75%; }
 .col-10 { width: 83.33%; }
@@ -43,10 +43,10 @@ html, body{
 .rightSide{
     height: 100%;
 }
-.medium {
-    margin-right: 0;
-    margin-left: 0;
-}
+.medium{
+    height: 33%;
+    margin-right: 1%;
+    margin-left: 0.5%;
     
 }
 .small{
@@ -74,13 +74,11 @@ html, body{
         padding: 0;
     }
     
-   .box {
-    border: 2px solid red;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 0;
-    margin-right: 0;
-}
+    .box {
+        border: 2px solid red;
+        margin: 5px;
+        height: 80px;
+    }
     
     .leftSide {
         display: none;
@@ -112,6 +110,3 @@ html, body{
         height: 80px;
     }
 }
-
-
-
