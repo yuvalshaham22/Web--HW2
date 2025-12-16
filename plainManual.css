@@ -29,8 +29,8 @@ html, body{
 .col-3  { width: 23.5%; }
 .col-4  { width: 32%; }
 .col-5  { width: 41.66%; }
-.col-6  { width: 49.0%; }
-.col-7  { width: 58.33%; }
+.col-6  { width: 49.5%; }
+.col-7  { width: 48.5%; }
 .col-8  { width: 65%; }
 .col-9  { width: 75%; }
 .col-10 { width: 83.33%; }
@@ -64,7 +64,9 @@ html, body{
     height: 32%;
     margin-top: 0.8%;
     margin-bottom: 0.5%;
-    margin-right: 0.5%;
+    margin-right: 0.5%;
+    margin-left: 1%;
+    
 }
 
 @media screen and (max-width: 750px) {
@@ -111,3 +113,4 @@ html, body{
     }
 
 }
+
