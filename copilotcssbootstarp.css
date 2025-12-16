@@ -1,0 +1,191 @@
+:root {
+    --box-border: #e53935; /* אדום */
+    --box-border-width: 6px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+/* מסגרת אדומה סביב כל הדף (חיצונית) */
+body {
+    border: var(--box-border-width) solid var(--box-border);
+    box-sizing: border-box;
+}
+
+/* כלליות */
+* {
+    box-sizing: border-box;
+}
+
+/* הקופסה שמכילה את כל הדף - ללא גבול חיצוני סביב המלבנים */
+.page-box {
+    width: 95%;
+    max-width: 1400px;
+    margin: 18px auto;
+    background: #ffffff;
+    border: none; /* הוסר הגבול שהקיף את כל המלבנים */
+    padding: 16px;
+    height: calc(100vh - 72px); /* מפצה על גבולות הגוף והמרווחים */
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    border-radius: 0; /* זוויות 90 מעלות */
+    overflow: hidden;
+    flex-direction: row; /* סרגל משמאל, תוכן מימין */
+}
+
+/* סרגל צד שמשמאל */
+.page-box .sidebar {
+    width: 8%;
+    min-width: 64px;
+    border: var(--box-border-width) solid var(--box-border); /* שומר מסגרת עבור הסרגל */
+    background: #fafafa;
+    padding: 8px;
+    border-radius: 0;
+    align-self: stretch;
+    height: 100%;
+    display: block;
+}
+
+/* דוגמא לפריטים בסרגל (אם קיימים) */
+.page-box .sidebar > div {
+    height: 40px;
+    background: #fff;
+    border: var(--box-border-width) solid var(--box-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+    border-radius: 0;
+}
+
+/* החלק העיקרי הימני - יתפרס לאורך כל הגובה */
+.page-box .content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 4px;
+    height: 100%;
+}
+
+/* כל שורה תחלק את הגובה הזמין בתוך ה-content */
+.row {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 1;        /* כל שורה תתפרס בחלוקת הגובה */
+    min-height: 0;  /* מאפשר לילדים להתמתח לגובה */
+}
+
+/* וודא שכל ילד של שורה יתפרס לגובה מלא של השורה */
+.row > * {
+    height: 100%;
+    min-height: 0;
+}
+
+/* שורה עליונה: 4 מלבנים קטנים, כל אחד עם מסגרת אדומה ועיגול 0 */
+.row-top .card {
+    flex: 1;
+    border: var(--box-border-width) solid var(--box-border);
+    background: #fff;
+    padding: 12px;
+    border-radius: 0;
+}
+
+/* שורה שנייה: מלבן גדול + חצי ימני עם שני מלבנים */
+.row-mid {
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+}
+
+.row-mid .left-big {
+    flex: 1;
+    border: var(--box-border-width) solid var(--box-border);
+    padding: 12px;
+    border-radius: 0;
+    background: #fff;
+    display: block;
+}
+
+.row-mid .right-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.row-mid .right-half .stack-box {
+    flex: 1;
+    border: var(--box-border-width) solid var(--box-border);
+    padding: 12px;
+    background: #fff;
+    border-radius: 0;
+}
+
+/* שורה תחתונה: שתי שליש + אחד שליש */
+.row-bottom {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.row-bottom .two-thirds {
+    flex: 2;
+    border: var(--box-border-width) solid var(--box-border);
+    padding: 12px;
+    border-radius: 0;
+    background: #fff;
+}
+
+.row-bottom .one-third {
+    flex: 1;
+    border: var(--box-border-width) solid var(--box-border);
+    padding: 12px;
+    border-radius: 0;
+    background: #fff;
+}
+
+/* אפקט קל - שמור על זוויות 90 */
+.page-box .card:hover,
+.page-box .left-big:hover,
+.page-box .stack-box:hover,
+.page-box .two-thirds:hover,
+.page-box .one-third:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* מובייל - התנהגות אנכית במכשירים קטנים */
+@media screen and (max-width: 750px) {
+    .page-box {
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+        padding: 12px;
+    }
+    .page-box .sidebar { display: none; }
+
+    .row {
+        flex-direction: column;
+        gap: 12px;
+        flex: initial;
+    }
+
+    .row > * {
+        width: 100%;
+        height: auto;
+    }
+
+    .row-mid .right-half { flex-direction: column;

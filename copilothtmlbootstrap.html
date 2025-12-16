@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rectangles layout</title>
+
+    <!-- Bootstrap CSS (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- local styles -->
+    <link rel="stylesheet" href="copilotcssbootstarp.css">
+</head>
+<body>
+    <div class="page-box">
+        <!-- סרגל צד משמאל - ריק -->
+        <aside class="sidebar" role="complementary" aria-label="sidebar"></aside>
+
+        <!-- החלק הימני עם כל המלבנים שמתפרסים לאורך כל הגובה -->
+        <main class="content" role="main">
+            <!-- שורה עליונה: 4 מלבנים קטנים -->
+            <div class="row row-top" aria-hidden="true">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+
+            <!-- שורה שנייה: הוחלפו המיקומים - שני המלבנים המונחים קודם ימוקמו בצד השמאלי של השורה -->
+            <div class="row row-mid" aria-hidden="true">
+                <!-- moved the stacked boxes to be the first column -->
+                <div class="right-half">
+                    <div class="stack-box"></div>
+                    <div class="stack-box"></div>
+                </div>
+
+                <!-- moved the single big rectangle to be the second column -->
+                <div class="left-big"></div>
+            </div>
+
+            <!-- שורה תחתונה: שתי שליש + אחד שליש -->
+            <div class="row row-bottom" aria-hidden="true">
+                <div class="two-thirds"></div>
+                <div class="one-third"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

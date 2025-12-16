@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copilot Layout</title>
+    <link rel="stylesheet" href="css-plain-copilot.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">Sidebar</div>
+        <div class="main-content">
+            <div class="row row1">
+                <div class="box">Box 1</div>
+                <div class="box">Box 2</div>
+                <div class="box">Box 3</div>
+                <div class="box">Box 4</div>
+            </div>
+
+            <div class="row-2">
+                <div class="left-section">
+                    <div class="box">Top Left Box</div>
+                    <div class="box">Bottom Left Box</div>
+                </div>
+                <div class="right-section">
+                    <div class="box tall-box">Right Tall Box</div>
+                </div>
+            </div>
+
+            <div class="row-3">
+                <div class="left-box box">Left Box</div>
+                <div class="right-box box">Right Box</div>
+            </div>
+        </div>
+    </div>
+        <script>
+            // Remove / hide boxes that contain only whitespace or no text to prevent empty boxes showing on mobile
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('.box').forEach(function (el) {
+                    if (!el.textContent || el.textContent.trim().length === 0) {
+                        el.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

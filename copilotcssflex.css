@@ -1,0 +1,140 @@
+/* General Layout */
+.container {
+    display: flex;
+    border: 2px solid red;
+    margin: 10px;
+    height: 100%;
+}
+
+.sidebar {
+    flex: 0 0 10%;
+    border: 2px solid red;
+    background-color: white;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+}
+
+/* Row 1 */
+.row1 {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.row1 .box {
+    flex: 1;
+    border: 2px solid red;
+    background-color: white;
+    margin-right: 10px;
+    min-height: 90px;
+}
+
+.row1 .box:last-child {
+    margin-right: 0;
+}
+
+/* Row 2 */
+.row-2 {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.row-2 .left-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.row-2 .left-section .box {
+    border: 2px solid red;
+    background-color: white;
+    margin-bottom: 10px;
+    min-height: 90px;
+}
+
+.row-2 .left-section .box:last-child {
+    margin-bottom: 0;
+}
+
+.row-2 .right-section {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+}
+
+.row-2 .right-section .tall-box {
+    border: 2px solid red;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+/* Row 3 */
+.row-3 {
+    display: flex;
+}
+
+.row-3 .left-box {
+    flex: 7;
+    border: 2px solid red;
+    background-color: white;
+    margin-right: 10px;
+    min-height: 90px;
+}
+
+.row-3 .right-box {
+    flex: 3;
+    border: 2px solid red;
+    background-color: white;
+    min-height: 90px;
+}
+
+/* General Box Styling */
+.box {
+    border: 2px solid red;
+    background-color: white;
+    min-height: 90px;
+}
+
+/* Responsive Design */
+@media (max-width: 750px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .row1, .row-2, .row-3 {
+        flex-direction: column;
+    }
+
+    .row1 .box, .row-2 .box, .row-3 .left-box, .row-3 .right-box {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .row-2 .left-section, .row-2 .right-section {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .row-2 .left-section .box:last-child {
+        margin-bottom: 0;
+    }
+}
